@@ -49,10 +49,3 @@ Form label,input,textarea{
     background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
-.Message{
-    display: none;
-    position:absolute;
-    top: 20vh;
-    padding: 10px;
-    z-index: 2;
-}
