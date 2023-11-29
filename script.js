@@ -1,8 +1,6 @@
 const Button = document.getElementById('Button');
 const Popup = document.getElementById('Popup');
 const Form = document.getElementById('Form');
-const Message_Success = document.getElementById('Message_Success');
-const Message_Error = document.getElementById('Message_Error');
 
 Button.addEventListener('click', () => {
     Popup.style.display = 'block';
@@ -17,20 +15,21 @@ Form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const formData = new FormData(Form);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://formcarry.com/s/jDSMpRR850', true);
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-            Message_Success.style.display = 'block';
+    const httpRequest = new XMLHttpRequest();
+    httpRequest.open('POST', 'https://formcarry.com/s/jDSMpRR850', true);
+    httpRequest.onreadystatechange = () => {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 406) {
+            alert("Данные формы успешно отправлены!");
             Form.reset();
             localStorage.removeItem('FormData');
+            Popup.style.display = 'none';
         } else {
-            Message_Error.style.display = 'block';
+            alert("Что-то пошло не так! Данные не отправлены!");
         }
         }
     };
-    xhr.send(formData);
+    httpRequest.send(formData);
 });
 
 Form.addEventListener('change', () => {
