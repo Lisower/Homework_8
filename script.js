@@ -10,7 +10,7 @@ Button.addEventListener('click', () => {
 });
 
 window.addEventListener('popstate', () => {
-    popup.style.display = 'none';
+    Popup.style.display = 'none';
 });
   
 Form.addEventListener('submit', (e) => {
