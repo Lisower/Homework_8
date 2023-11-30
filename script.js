@@ -50,12 +50,3 @@ window.addEventListener('load', () => {
         document.getElementById('agreement').checked = savedFormData.agreement;
     }
 });
-
-Form.addEventListener('input', () => {
-    Message_Success.style.display = 'none';
-    Message_Error.style.display = 'none';
-});
-document.getElementById("Form").addEventListener("submit", function(event){
-    event.preventDefault();
-    document.getElementById("Form").reset();
-})
