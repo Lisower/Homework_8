@@ -19,7 +19,7 @@ Form.addEventListener('submit', (e) => {
     httpRequest.open('POST', 'https://formcarry.com/s/jDSMpRR850', true);
     httpRequest.onreadystatechange = () => {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        if (httpRequest.status === 406) {
+        if (httpRequest.status === 200 || httpRequest.status === 406) {
             alert("Данные формы успешно отправлены!");
             Form.reset();
             localStorage.removeItem('FormData');
